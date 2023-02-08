@@ -1,3 +1,10 @@
+<?php
+ 
+function main(array $args) : array
 {
-"output":"test"
+    $object = array('output' => 'test');
+ 
+    return [
+        'body' => json_encode($object),
+    ];
 }
