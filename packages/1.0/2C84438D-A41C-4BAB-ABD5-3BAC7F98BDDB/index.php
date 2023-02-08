@@ -6,6 +6,9 @@ function main(array $args) : array
     if (isset($args['name'])) {
         $object['name'] = $args['name'];
     }
+    if (isset($args['form'])) {
+        $object['form'] = $args['form'];
+    }
  
     return [
         'body' => json_encode($object),
