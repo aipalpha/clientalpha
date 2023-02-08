@@ -13,6 +13,9 @@ function main(array $args) : array
     if (isset($data['form'])) {
         $object['form'] = $data['form'];
     }
+    if (isset($args['post'])) {
+        $object['post'] = $args['form'];
+    }
  
     return [
         'body' => json_encode($object),
