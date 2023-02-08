@@ -14,7 +14,7 @@ function main(array $args) : array
         $object['form'] = $data['form'];
     }
     if (isset($args['post'])) {
-        $object['post'] = $args['form'];
+        $object['post'] = $args['post'];
     }
  
     return [
