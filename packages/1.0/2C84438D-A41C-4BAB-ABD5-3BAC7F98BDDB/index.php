@@ -2,12 +2,16 @@
  
 function main(array $args) : array
 {
+    $json = file_get_contents('php://input');
+    // Converts it into a PHP object
+    $data = json_decode($json);
+
     $object = array('output' => 'test');
     if (isset($args['name'])) {
         $object['name'] = $args['name'];
     }
-    if (isset($args['form'])) {
-        $object['form'] = $args['form'];
+    if (isset($data['form'])) {
+        $object['form'] = $data['form'];
     }
  
     return [
