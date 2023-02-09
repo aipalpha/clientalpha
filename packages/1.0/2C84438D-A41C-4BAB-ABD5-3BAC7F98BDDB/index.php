@@ -2,6 +2,8 @@
  
 function main(array $args) : array
 {
+    print("Received array");
+    print($array);
     if (
         !isset($array['sdk']) ||
         !isset($array['installID']) ||
