@@ -3,32 +3,32 @@
 function main(array $args) : array
 {
     print("Received array");
-    print($array);
+    print($args);
     if (
-        !isset($array['sdk']) ||
-        !isset($array['installID']) ||
-        !isset($array['bundleID']) ||
-        !isset($array['appVersion']) ||
-        !isset($array['buildVersion']) ||
-        !isset($array['osVersion']) ||
-        !isset($array['device']) ||
-        !isset($array['model']) ||
-        !isset($array['locale'])
+        !isset($args['sdk']) ||
+        !isset($args['installID']) ||
+        !isset($args['bundleID']) ||
+        !isset($args['appVersion']) ||
+        !isset($args['buildVersion']) ||
+        !isset($args['osVersion']) ||
+        !isset($args['device']) ||
+        !isset($args['model']) ||
+        !isset($args['locale'])
     ) {
         return [
             'statusCode' => 403
         ];    
     }
 
-    $sdkVersion = $array['sdk'];
-    $installID = $array['installID'];
-    $bundleID = $array['bundleID'];
-    $appVersion = $array['appVersion'];
-    $buildVersion = $array['buildVersion'];
-    $osVersion = $array['osVersion'];
-    $device = $array['device'];
-    $model = $array['model'];
-    $locale = $array['locale'];
+    $sdkVersion = $args['sdk'];
+    $installID = $args['installID'];
+    $bundleID = $args['bundleID'];
+    $appVersion = $args['appVersion'];
+    $buildVersion = $args['buildVersion'];
+    $osVersion = $args['osVersion'];
+    $device = $args['device'];
+    $model = $args['model'];
+    $locale = $args['locale'];
 
     
     $object = array(
