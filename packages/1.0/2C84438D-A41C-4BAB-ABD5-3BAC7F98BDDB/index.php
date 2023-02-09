@@ -2,14 +2,13 @@
  
 function main(array $args) : array
 {
-    print("Received array");
-    print($args);
     if (
         !isset($args['sdk']) ||
         !isset($args['installID']) ||
         !isset($args['bundleID']) ||
         !isset($args['appVersion']) ||
         !isset($args['buildVersion']) ||
+        !isset($args['platform']) ||
         !isset($args['osVersion']) ||
         !isset($args['device']) ||
         !isset($args['model']) ||
@@ -25,22 +24,24 @@ function main(array $args) : array
     $bundleID = $args['bundleID'];
     $appVersion = $args['appVersion'];
     $buildVersion = $args['buildVersion'];
+    $platform = $args['platform'];
     $osVersion = $args['osVersion'];
     $device = $args['device'];
     $model = $args['model'];
     $locale = $args['locale'];
 
-    
+    $endpoint = 'https://none';
+    if (isset($args['mirror'])) {
+        $endpoint = $args['mirror'];
+    }
+
     $object = array(
-        'sdkVersion' => $sdkVersion,
-        'installID' => $installID,
-        'bundleID' => $bundleID,
-        'appVersion' => $appVersion,
-        'buildVersion' => $buildVersion,
-        'osVersion' => $osVersion,
-        'device' => $device,
-        'model' => $model,
-        'locale' => $locale
+        'enabled' => true,
+        'endpoint' => $endpoint,
+        'source' => 'CE7EB48A-68C5-453D-AB58-AC6A9BC4D180',
+        'batch' => 10,
+        'minFreq' => 0,
+        'maxFreq' => 10
     );
 
 
