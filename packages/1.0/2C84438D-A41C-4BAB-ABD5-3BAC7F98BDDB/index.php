@@ -30,15 +30,13 @@ function main(array $args) : array
     $model = $args['model'];
     $locale = $args['locale'];
 
-    $endpoint = 'https://none';
-    if (isset($args['mirror'])) {
-        $endpoint = $args['mirror'];
-    }
+    $endpoint = 'https://recv1.aipricot.io/events';
 
     $object = array(
         'enabled' => true,
         'endpoint' => $endpoint,
         'source' => 'CE7EB48A-68C5-453D-AB58-AC6A9BC4D180',
+        'channel' => 'test_chat',
         'batch' => 10,
         'minFreq' => 0,
         'maxFreq' => 10
